@@ -2,9 +2,11 @@ import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 from tensorflow.keras.models import load_model
+url = "https://github.com/iraajp/GeoigniterDemo"
 
 st.set_page_config(layout="wide")
 st.title("🔥 GeoIgniter – Forest Fire Risk Prediction Demo")
+st.link_button("Source code ", url)
 
 st.markdown("This demo predicts forest fire risk using a trained model on terrain (slope) and vegetation (LULC) features.")
 
@@ -28,16 +30,11 @@ with st.spinner("Running model prediction..."):
     fire_mask, fire_scores = predict_fire(X_flat)
 
 # --- Visualize Results ---
-st.subheader("🔥 Fire Risk Map")
+st.subheader(" Fire Risk Map")
 fig, ax = plt.subplots(figsize=(8, 8))
 ax.imshow(fire_scores, cmap="hot", interpolation="nearest")
 ax.set_title("Predicted Fire Probability (0 to 1)")
-ax.axis("off")
+ax.axis("on")
 st.pyplot(fig)
 
-st.subheader("🔥 Binary Fire Prediction Map")
-fig2, ax2 = plt.subplots(figsize=(8, 8))
-ax2.imshow(fire_mask, cmap="Reds", interpolation="nearest")
-ax2.set_title("Binary Fire Mask (Threshold = 0.5)")
-ax2.axis("off")
-st.pyplot(fig2)
+
