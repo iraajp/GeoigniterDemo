@@ -1,4 +1,6 @@
 streamlit
-numpy
 tensorflow
+numpy
 matplotlib
+folium
+scikit-image
