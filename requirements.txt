@@ -4,3 +4,4 @@ numpy
 matplotlib
 folium
 scikit-image
+branca==0.6.0
