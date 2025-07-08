@@ -6,3 +6,4 @@ folium
 scikit-image
 branca==0.6.0
 streamlit-folium==0.14.0
+rasterio
