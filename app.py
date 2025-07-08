@@ -14,7 +14,7 @@ st.markdown("Predicted fire risk map with a 0–1 risk scale overlay.")
 def run_prediction():
     # Load pre-trained model
     from tensorflow.keras.models import load_model
-    model = load_model("models/model.keras")
+    model = load_model("models/fire_model.h5")
 
     # Load preprocessed inputs
     slope = np.load("data/slope.npy")      # (H, W)
